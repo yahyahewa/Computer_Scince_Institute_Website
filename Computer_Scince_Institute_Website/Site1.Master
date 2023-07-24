@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Computer_Scince_Institute_Website.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        $(document).ready(function () {
+            $("#panel").slideUp(0);
+            $("#btmenu").click(function () {
+                $("#panel").slideToggle(260);
+            });
+        });
+    </script>
+    <style>
+        *{
+        }
+     body{
+            font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+            width:100%;
+     }
+      #header{
+          background-color:rgba(255, 255, 255, 0.25);
+          border-bottom:solid 1px #ffffff;
+      }
+     #header img{
+          width:20px;
+          height:20px;
+          margin-left:7px;
+      }
+     .c{
+         background-color:rgba(255, 255, 255, 0.20)
+     }
+     #Menu1 li a{
+         font-size:25px;
+         font-weight:500;
+         color:darkorange;
+         margin-right:25px;
+     }
+     #Menu1 li:hover{
+         transform:scale(1.2);
+            transition: all 0.5s;
+     }
+     .menuclick{
+         width:60%;
+         height:5px;
+         background-color:#ffffff;
+         margin:2px;
+     }
+     footer{
+         font-size:25px;
+         background-color:rgba(255, 255, 255, 0.20);
+         font-weight:500;
+         color:darkorange;
+         margin-top:50px;
+
+     }
+        @media only screen and (max-width: 500px){
+            footer{
+                font-size:15px;
+            }
+         }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id="headercontent">
+             <div class="row" id="header">
+                 <div class="col-9 col-sm-10 col-md-10 col-lg-11 col-xl-11 p-3 p-lg-4">
+                <a href="https://www.facebook.com/Suly.CSI" class=""><img src="img/facebook.svg" /></a>
+                <a class=""><img src="img/instagram.svg" /></a>
+                <a class=""><img src="img/twitter.svg" /></a>
+                     </div>
+                 <div class="col-3 col-sm-2 col-md-2 col-lg-1 col-xl-1 p-3 row justify-content-end" id="btmenu">
+                     <div class="col-6 menuclick"></div>
+                     <div class="col-6 menuclick"></div>
+                     <div class="col-6 menuclick"></div>
+                 </div>
+             </div>
+                <div class="c justify-content-center row" id="panel">
+                <asp:Menu Style="text-align:center"  ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" StaticDisplayLevels="2"></asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div> </form>
+            <footer style="bottom:0px;" id="footer" class="text-center text-capitalize bg-dark p-2">Copy Right@computer science institute</foote>
+   
+</body>
+</html>
+
+
+
+<%-- <div class="menu">  
+                  <div class="scdiv" runat="server" id="scDiv">
+                   <img src="img/facebook.svg"/>
+                   <img src="img/instagram.svg"/>
+                   <img src="img/twitter.svg"/>
+                </div>
+                  
+                <img src="img/open-menu.svg" class="img-fluid" id="btmenu" />
+              </div>--%>
